@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <title>Bowling Scores</title>
+    <title>Bowling frame</title>
     <style>
         .score-board > .col-sm {
             border: 1px solid #333;
@@ -28,19 +28,19 @@
             min-height: 58px;
         }
 
-        .score-board .scores .row {
+        .score-board .frame .row {
             margin-left: -22px;
         }
 
-        .score-board > .col-sm:nth-child(12) .scores .row {
+        .score-board > .col-sm:nth-child(12) .frame .row {
             margin-left: -44px;
         }
 
-        .score-board .scores > .row > .col-xs {
+        .score-board .frame > .row > .col-xs {
             border: 1px solid #333;
         }
 
-        .score-board .scores > .row > .col-xs.error {
+        .score-board .frame > .row > .col-xs.error {
             color: red;
         }
 
@@ -55,7 +55,7 @@
     <div class="row score-board text-center">
         <div class="col-sm">
             <div class="title">1</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -65,7 +65,7 @@
         </div>
         <div class="col-sm">
             <div class="title">2</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -75,7 +75,7 @@
         </div>
         <div class="col-sm">
             <div class="title">3</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -85,7 +85,7 @@
         </div>
         <div class="col-sm">
             <div class="title">4</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -95,7 +95,7 @@
         </div>
         <div class="col-sm">
             <div class="title">1</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -105,7 +105,7 @@
         </div>
         <div class="col-sm">
             <div class="title">1</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -115,7 +115,7 @@
         </div>
         <div class="col-sm">
             <div class="title">5</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -125,7 +125,7 @@
         </div>
         <div class="col-sm">
             <div class="title">6</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -135,7 +135,7 @@
         </div>
         <div class="col-sm">
             <div class="title">7</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -145,7 +145,7 @@
         </div>
         <div class="col-sm">
             <div class="title">8</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -155,7 +155,7 @@
         </div>
         <div class="col-sm">
             <div class="title">9</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -165,7 +165,7 @@
         </div>
         <div class="col-sm">
             <div class="title">10</div>
-            <div class="float-right scores">
+            <div class="float-right frame">
                 <div class="row">
                     <div class="col-xs" contenteditable="true"></div>
                     <div class="col-xs" contenteditable="true"></div>
@@ -178,49 +178,113 @@
     </div>
 
     <script type="text/javascript">
-        window.onload = () => {
-            const validChars1 = /^([0-9]|10|X|-)$/;
-            const validChars2 = /^([0-9]|10|X|\/|-)$/;
+        const validChars1 = /^([0-9]|10|X|-)$/;
+        const validChars2 = /^([0-9]|10|X|\/|-)$/;
 
-            const scores = document.getElementsByClassName('scores');
-            for (const score of scores) {
-                console.log(score, scores[score]);
+        const frames = document.getElementsByClassName('frame');
+        for (const frameKey in frames) {
+            if (!frames.hasOwnProperty(frameKey)) break;
 
-                const inputs = score.getElementsByClassName('col-xs');
-                for (const i in inputs) {
-                    if (!inputs.hasOwnProperty(i)) break;
-                    const input = inputs[i];
-                    console.log(i);
-                    input.addEventListener("input", () => {
-                        input.textContent = input.textContent.trim();
-                        input.className = 'col-xs';
+            const frame = frames[frameKey];
+            const throws = frame.getElementsByClassName('col-xs');
 
-                        const throw1score = parseInt(inputs[0].textContent.trim());
-                        const throw2score = parseInt(inputs[1].textContent.trim());
+            for (const throwKey in throws) {
+                if (!throws.hasOwnProperty(throwKey)) break;
+                const throwNumber = parseInt(throwKey);
+                const $throw = throws[throwKey];
 
-                        if (i === '0') {
-                            if (!validChars1.test(input.textContent)) {
-                                input.className += ' error';
-                                return;
+                $throw.addEventListener('input', () => {
+                    new Promise((resolve, reject) => {
+                        $throw.textContent = $throw.textContent.trim();
+                        $throw.className = 'col-xs';
+
+                        const throw1score = parseInt(throws[0].textContent.trim());
+                        const throw2score = parseInt(throws[1].textContent.trim());
+
+                        if (throwNumber === 0) {
+                            if (!validChars1.test($throw.textContent)) {
+                                $throw.className += ' error';
+                                return reject('Invalid Entry');
                             }
-                            if (input.textContent === '10') input.textContent = 'X';
-                            if (input.textContent === 'X') {
-                                inputs[1].textContent = '-';
+                            if ($throw.textContent === '10') $throw.textContent = 'X';
+                            if ($throw.textContent === 'X') {
+                                frames[1].textContent = '-';
                             }
 
                         }
-                        if (i === '1') {
-                            if (!validChars2.test(input.textContent || throw1score + throw2score > 10)) {
-                                input.className += ' error';
-                                return;
+                        if (throwNumber === 1) {
+                            if (!validChars2.test($throw.textContent || throw1score + throw2score > 10)) {
+                                $throw.className += ' error';
+                                return reject('Invalid Entry');
                             }
-                            if (input.textContent === '10') input.textContent = 'X';
-                            if (throw1score + throw2score === 10) input.textContent = '/';
+                            if ($throw.textContent === '10') $throw.textContent = 'X';
+                            if (throw1score + throw2score === 10) $throw.textContent = '/';
                         }
-                    }, false);
+                        resolve(true);
+                    }).finally(calcScores);
+
+                }, false);
+            }
+        }
+
+        const calcScores = () => {
+            const frames = document.getElementsByClassName('frame');
+            for (const frameKey in frames) {
+                if (!frames.hasOwnProperty(frameKey)) break;
+
+                const frameNumber = parseInt(frameKey);
+                const frame = frames[frameKey];
+                const throws = frame.getElementsByClassName('col-xs');
+                const frameScore = frame.getElementsByClassName('score');
+
+                for (const throwKey in throws) {
+                    if (!throws.hasOwnProperty(throwKey)) break;
+                    const throwNumber = parseInt(throwKey);
+                    const $throw = throws[throwKey];
+
+                    const prevFrame = frameNumber > 0 ? frames[frameKey - 1] : null;
+                    const prevFrameScore = prevFrame ? prevFrame.getElementsByClassName('score') : null;
+
+                    const nextFrame = frameNumber < 9 ? frames[frameKey + 1] : null;
+                    let nextThrows = nextFrame ? nextFrame.getElementsByClassName('col-xs') : null;
+
+                    if ((nextFrame && nextFrame.getElementsByClassName('error').length) || (prevFrame && prevFrame.getElementsByClassName('error').length)) {
+                        frameScore.textContent = '-';
+                        break;
+                    }
+
+                    if (prevFrameScore && prevFrameScore.textContent === '-') {
+                        return;
+                    }
+
+                    let score = 0;
+                    let prevScore = prevFrame && prevFrameScore ? parseInt(prevFrameScore.textContent) : 0;
+                    score += prevScore;
+                    score += $throw.textContent === '/' || $throw.textContent === 'X' ? 10 : parseInt($throw.textContent);
+                    if (throwNumber === 0 && throws[1].textContent !== '' && throws[1].textContent !== 'X') {
+                        score += parseInt(throws[1].textContent);
+                    }
+
+                    if ($throw.textContent === '/' || $throw.textContent === 'X') {
+                        let oneThrowFuture = frameNumber < 9 ? nextThrows[0] : throws[2];
+                        if (oneThrowFuture.textContent === '') {
+                            return;
+                        }
+                        score += oneThrowFuture.textContent === '/' || oneThrowFuture.textContent === 'X' ? 10 : parseInt(nextThrows[0].textContent);
+                    }
+                    if ($throw.textContent === 'X') {
+                        let twoThrowFuture = frameNumber < 9 ? nextThrows[1] : throws[3];
+                        if (twoThrowFuture.textContent === '') {
+                            return;
+                        }
+                        score += twoThrowFuture.textContent === '/' || twoThrowFuture.textContent === 'X' ? 10 : parseInt(nextThrows[0].textContent);
+                    }
+                    debugger;
+
+                    frameScore.textContent = score;
                 }
             }
-        };
+        }
     </script>
 </div>
 </body>
