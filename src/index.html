@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <title>Bowling frame</title>
+    <title>Bowling Score</title>
     <style>
-        .score-board > .col-sm {
+        .score-board .frame {
             border: 1px solid #333;
             border-right-width: 0;
             padding: 0;
         }
 
-        .score-board > .col-sm:last-child {
+        .score-board .frame:last-child {
             border-right-width: 1px;
         }
 
@@ -32,15 +32,15 @@
             margin-left: -22px;
         }
 
-        .score-board > .col-sm:nth-child(12) .frame .row {
+        .score-board > frame:nth-child(12) .throws .row {
             margin-left: -44px;
         }
 
-        .score-board .frame > .row > .col-xs {
+        .score-board .frame .throws .row > .throw {
             border: 1px solid #333;
         }
 
-        .score-board .frame > .row > .col-xs.error {
+        .score-board .frame .throws .row > .throw.error {
             color: red;
         }
 
@@ -53,124 +53,104 @@
 <body>
 <div class="container">
     <div class="row score-board text-center">
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">1</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
         </div>
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">2</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
         </div>
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">3</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
         </div>
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">4</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
         </div>
-        <div class="col-sm">
-            <div class="title">1</div>
-            <div class="float-right frame">
-                <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
-                </div>
-            </div>
-            <span class="score"></span>
-        </div>
-        <div class="col-sm">
-            <div class="title">1</div>
-            <div class="float-right frame">
-                <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
-                </div>
-            </div>
-            <span class="score"></span>
-        </div>
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">5</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
         </div>
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">6</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
         </div>
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">7</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
         </div>
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">8</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
         </div>
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">9</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
         </div>
-        <div class="col-sm">
+        <div class="col-sm frame">
             <div class="title">10</div>
-            <div class="float-right frame">
+            <div class="float-right throws">
                 <div class="row">
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
-                    <div class="col-xs" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
+                    <div class="col-xs throw" contenteditable="true"></div>
                 </div>
             </div>
             <span class="score"></span>
@@ -178,48 +158,51 @@
     </div>
 
     <script type="text/javascript">
-        const validChars1 = /^([0-9]|10|X|-)$/;
-        const validChars2 = /^([0-9]|10|X|\/|-)$/;
+        const validCharsRegEx1 = /^([0-9]|10|X|-)$/;
+        const validCharsRegEx2 = /^([0-9]|10|X|\/|-)$/;
+        const errorRegEx = /error/gi;
+
 
         const frames = document.getElementsByClassName('frame');
         for (const frameKey in frames) {
             if (!frames.hasOwnProperty(frameKey)) break;
 
             const frame = frames[frameKey];
-            const throws = frame.getElementsByClassName('col-xs');
+            const throws = frame.getElementsByClassName('throw');
 
             for (const throwKey in throws) {
                 if (!throws.hasOwnProperty(throwKey)) break;
                 const throwNumber = parseInt(throwKey);
                 const $throw = throws[throwKey];
 
-                $throw.addEventListener('input', () => {
+                $throw.addEventListener('input', ({data}) => {
                     new Promise((resolve, reject) => {
+                        if (data === '' || null) return resolve(true);
                         $throw.textContent = $throw.textContent.trim();
-                        $throw.className = 'col-xs';
+                        $throw.className = 'col-xs throw';
 
                         const throw1score = parseInt(throws[0].textContent.trim());
                         const throw2score = parseInt(throws[1].textContent.trim());
 
                         if (throwNumber === 0) {
-                            if (!validChars1.test($throw.textContent)) {
+                            if (!validCharsRegEx1.test($throw.textContent) || throw1score + throw2score > 10) {
                                 $throw.className += ' error';
                                 return reject('Invalid Entry');
                             }
                             if ($throw.textContent === '10') $throw.textContent = 'X';
                             if ($throw.textContent === 'X') {
-                                frames[1].textContent = '-';
+                                throws[1].textContent = '';
                             }
-
                         }
                         if (throwNumber === 1) {
-                            if (!validChars2.test($throw.textContent || throw1score + throw2score > 10)) {
+                            if (!validCharsRegEx2.test($throw.textContent || throw1score + throw2score > 10)) {
                                 $throw.className += ' error';
                                 return reject('Invalid Entry');
                             }
-                            if ($throw.textContent === '10') $throw.textContent = 'X';
-                            if (throw1score + throw2score === 10) $throw.textContent = '/';
+                            if ($throw.textContent === '10') $throw.textContent = '/';
                         }
+                        if (throw1score + throw2score === 10) throws[1].textContent = '/';
+
                         resolve(true);
                     }).finally(calcScores);
 
@@ -234,28 +217,36 @@
 
                 const frameNumber = parseInt(frameKey);
                 const frame = frames[frameKey];
-                const throws = frame.getElementsByClassName('col-xs');
-                const frameScore = frame.getElementsByClassName('score');
+                const throws = frame.getElementsByClassName('throw');
+                const frameScore = frame.getElementsByClassName('score')[0];
 
                 for (const throwKey in throws) {
                     if (!throws.hasOwnProperty(throwKey)) break;
                     const throwNumber = parseInt(throwKey);
                     const $throw = throws[throwKey];
 
-                    const prevFrame = frameNumber > 0 ? frames[frameKey - 1] : null;
-                    const prevFrameScore = prevFrame ? prevFrame.getElementsByClassName('score') : null;
+                    const prevFrame = frameNumber > 0 ? frames[frameNumber - 1] : null;
+                    const prevFrameScore = prevFrame ? prevFrame.getElementsByClassName('score')[0] : null;
 
-                    const nextFrame = frameNumber < 9 ? frames[frameKey + 1] : null;
-                    let nextThrows = nextFrame ? nextFrame.getElementsByClassName('col-xs') : null;
+                    const nextFrame = frameNumber < 9 ? frames[frameNumber + 1] : null;
+                    let nextThrows = nextFrame ? nextFrame.getElementsByClassName('throw') : null;
 
-                    if ((nextFrame && nextFrame.getElementsByClassName('error').length) || (prevFrame && prevFrame.getElementsByClassName('error').length)) {
-                        frameScore.textContent = '-';
+                    const nextNextFrame = frameNumber < 9 ? frames[frameNumber + 2] : null;
+                    let nextNextThrows = nextNextFrame ? nextNextFrame.getElementsByClassName('throw') : null;
+
+                    if (errorRegEx.test($throw.className) || (nextFrame && nextFrame.getElementsByClassName('error').length) || (prevFrame && prevFrame.getElementsByClassName('error').length)) {
+                        frameScore.textContent = '';
                         break;
                     }
 
-                    if (prevFrameScore && prevFrameScore.textContent === '-') {
+                    if ($throw.textContent === '') {
+                        break;
+                    }
+
+                    if (prevFrameScore && prevFrameScore.textContent === '') {
                         return;
                     }
+
 
                     let score = 0;
                     let prevScore = prevFrame && prevFrameScore ? parseInt(prevFrameScore.textContent) : 0;
@@ -264,24 +255,35 @@
                     if (throwNumber === 0 && throws[1].textContent !== '' && throws[1].textContent !== 'X') {
                         score += parseInt(throws[1].textContent);
                     }
+                    if (throwNumber === 1) {
+                        if (errorRegEx.test(throws[0].className)) {
+                            frameScore.textContent = '';
+                            break;
+                        }
+                        if (throws[0].textContent === 'X') break;
+                        if ($throw.textContent !== '/') score += parseInt(throws[0].textContent)
+                    }
 
                     if ($throw.textContent === '/' || $throw.textContent === 'X') {
                         let oneThrowFuture = frameNumber < 9 ? nextThrows[0] : throws[2];
                         if (oneThrowFuture.textContent === '') {
+                            frameScore.textContent = '-';
                             return;
                         }
                         score += oneThrowFuture.textContent === '/' || oneThrowFuture.textContent === 'X' ? 10 : parseInt(nextThrows[0].textContent);
-                    }
-                    if ($throw.textContent === 'X') {
-                        let twoThrowFuture = frameNumber < 9 ? nextThrows[1] : throws[3];
-                        if (twoThrowFuture.textContent === '') {
-                            return;
-                        }
-                        score += twoThrowFuture.textContent === '/' || twoThrowFuture.textContent === 'X' ? 10 : parseInt(nextThrows[0].textContent);
-                    }
-                    debugger;
 
-                    frameScore.textContent = score;
+                        if ($throw.textContent === 'X') {
+                            // Bug in calculation of
+                            let twoThrowFuture = frameNumber < 9 ? (oneThrowFuture.textContent === 'X' ? (frameNumber === 8 ? nextThrows[2] : nextNextThrows[0]) : nextThrows[1]) : throws[3];
+                            if (twoThrowFuture.textContent === '') {
+                                return;
+                            }
+
+                            score += twoThrowFuture.textContent === '/' || twoThrowFuture.textContent === 'X' ? 10 : parseInt(nextThrows[0].textContent);
+                        }
+                    }
+
+                    if (!isNaN(score)) frameScore.textContent = score;
                 }
             }
         }
